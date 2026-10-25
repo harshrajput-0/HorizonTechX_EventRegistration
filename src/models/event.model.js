@@ -25,11 +25,11 @@ const eventSchema = new mongoose.Schema(
       min: 1,
     },
 
-organizer: {
-  type: mongoose.Schema.Types.ObjectId,
-  ref: "User",
-  required: true,
-},
+    organizer: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
     thumbnail: {
       type: String,
       default: "",

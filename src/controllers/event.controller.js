@@ -14,8 +14,15 @@ import { cloudinary } from "../configs/cloudinary.js";
 export const createEvent = asyncHandler(async (req, res) => {
   const { title, description, date, location, capacity } = req.body;
 
-  if ([title, description, date, location].some((field) => !field || field.trim() === "")) {
-    throw new ApiError(400, "Title, description, date and location are required");
+  if (
+    [title, description, date, location].some(
+      (field) => !field || field.trim() === "",
+    )
+  ) {
+    throw new ApiError(
+      400,
+      "Title, description, date and location are required",
+    );
   }
   if (!capacity || isNaN(capacity) || Number(capacity) < 1) {
     throw new ApiError(400, "Capacity must be a positive number");

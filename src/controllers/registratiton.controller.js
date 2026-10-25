@@ -35,7 +35,6 @@ export const createRegistration = asyncHandler(async (req, res) => {
     user: userId,
     event: eventId,
   });
-  
 
   // Check for existing registration and reactivate previously cancelled registrations
   if (existingRegration) {

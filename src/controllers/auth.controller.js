@@ -6,7 +6,6 @@ import { User } from "../models/user.model.js";
 
 import jwt from "jsonwebtoken";
 
-
 //
 //
 // -----------------------------------------------------------------------------
@@ -24,7 +23,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     throw new ApiError(409, "An user with this email already exists");
   }
 
-  // Creating User 
+  // Creating User
   const user = await User.create({
     name,
     email,
