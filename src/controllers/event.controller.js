@@ -29,6 +29,9 @@ export const createEvent = asyncHandler(async (req, res) => {
   }
 
   let thumbnail = req.body.thumbnail || "";
+  // In testing if create event is giving 
+  // Error:EISDIR: illegal operation on a directory, read
+  // Then consider sending no thumbnail fron frontend or Postman 
 
   // Upload thumbnail
   if (req.file) {
